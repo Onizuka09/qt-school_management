@@ -1,0 +1,1 @@
+# qt-school_management
