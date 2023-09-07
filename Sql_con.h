@@ -26,10 +26,10 @@ public:
     bool check_user_exist(QString table_name, QString name,QString sername);
     bool update_user(QString table_name,QVariantList& items);
     bool insert_user(QString table_name,QVariantList& items );
-    QList<QString> select_user(QString cmd);
+    QStringList select_user(QString cmd);
     bool user_connection(QString table_name, QList <QString>& credentials);
     bool remove_user(QString table_name, QList<QString>& list);
-    QSqlQueryModel* load_all_table_data(QString table_name);
+    QSqlQueryModel* load_all_table_data(QString table_name, QString cmd);
 };
 
 #endif // SQL_CON_H

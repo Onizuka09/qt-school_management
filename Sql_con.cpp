@@ -1,4 +1,5 @@
 #include "Sql_con.h"
+#include"notification.h"
 
 
 SQL_con::SQL_con  (QString db_type , QString hostname,QString username , QString passwd,QString db_name )
@@ -28,6 +29,7 @@ bool  SQL_con ::  connect (){
     else
     {
         qDebug()<<"unable to connect error: "<<db.lastError().text();
+//    Notification:showError("Unablto conenct to Database",db.lastError().text());
     }
     return false ;
 }
@@ -130,7 +132,7 @@ bool SQL_con::insert_user(QString table_name, QVariantList &items)
     return false ;
 }
 
-QList<QString> SQL_con::select_user(QString cmd)
+QStringList SQL_con::select_user(QString cmd)
 {
     QList<QString> items ;
     QSqlQuery qry;
@@ -206,13 +208,25 @@ bool SQL_con::remove_user(QString table_name, QList<QString> &list)
 }
 
 
-QSqlQueryModel* SQL_con::load_all_table_data(QString table_name)
+QSqlQueryModel* SQL_con::load_all_table_data(QString table_name,QString cmd)
 {
     QSqlQueryModel* model = new QSqlQueryModel();
     QSqlQuery *qry= new  QSqlQuery (db);
-     QString cmd = QString("select * from %1").arg(table_name);
+//     QString cmd = QString("select * from %1").arg(table_name);
+    qDebug()<<cmd;
     qry->prepare(cmd);
-    qry->exec();
+    if (qry->exec())
+{
+    qDebug()<<"done";
     model->setQuery(*qry);
-    return model;
+}
+else {
+    qDebug()<<"Unable to laod all data ERROR: "<<qry->lastError().text();
+
+    delete model; // Clean up the model in case of an error
+    model = nullptr; // Set model to nullptr to indicate an error
+}
+
+delete qry; // Clean up the query object
+return model;
 }

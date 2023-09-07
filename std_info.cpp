@@ -6,8 +6,14 @@ std_info::std_info(QWidget *parent,QString type,SQL_con* db) :
     ui(new Ui::std_info),my_db(db)
 {
     this->type = type;
+//    ui->save_diag_btn->setEnabled(true);
+
     ui->setupUi(this);
+    ui->save_diag_btn->setEnabled(true);
+
     if (type=="Create"){
+
+        qDebug()<<"testss";
         ui->diag_title->setText("Creating new USER");
     }
     else if ("Alter"==type){
@@ -30,13 +36,14 @@ void std_info::on_close_diag_btn_clicked()
 }
 
 bool std_info::create_new_user(){
+
     QString name = ui->name_edit->text();
     QString surname = ui->surname_edit->text();
     QString pass = ui->passwd_edit->text() ;
     QString age = ui->age_edit->text() ;
     QString std_class = ui->class_edit->text() ;
     QString grade = ui->grade_edit->text() ;
-    //    ui->gra
+
     qDebug()<< name <<surname << pass<<age<<std_class<<grade;
     if (name.trimmed().isEmpty() || surname.trimmed().isEmpty() || pass.trimmed().isEmpty()  ){
         qDebug()<<"name or username or passord can't be a white space";
@@ -71,7 +78,7 @@ bool std_info::show_user_info(QString name,QString surname){
     ui->surname_edit->setText(list.at(2));
     ui->passwd_edit->setText(list.at(3)) ;
     ui->age_edit->setText(list.at(4)) ;
-    ui->class_edit->setDisplayIntegerBase(list.at(5).toInt())  ;//setText()
+    ui->class_edit->setValue(list.at(5).toInt());//setText()
     ui->grade_edit->setText(list.at(6)) ;
     return false;
 }
@@ -83,6 +90,7 @@ bool std_info::update_user_data(){
     QString pass = ui->passwd_edit->text() ;
     QString age = ui->age_edit->text() ;
     QString std_class = ui->class_edit->text() ;
+//    ui->class_edit->
     QString grade = ui->grade_edit->text() ;
     //    ui->gra
     //    QString t = QString("gggmal %1").arg(50);
@@ -113,27 +121,7 @@ void std_info::on_save_diag_btn_clicked()
     }
     else if ("Alter"==type){
                 update_user_data();
-    }//    QString name = ui->name_edit->text();
-//    QString surname = ui->surname_edit->text();
-//    QString pass = ui->passwd_edit->text() ;
-//    QString age = ui->age_edit->text() ;
-//    QString std_class = ui->class_edit->text() ;
-//    QString grade = ui->grade_edit->text() ;
-
-//    qDebug() << pass<<age<<std_class<<grade;
-//    if ( pass.trimmed().isEmpty()  ){
-//        qDebug()<<"passord can't be a white space";
-
-//    }
-//    bool state = my_db->check_user_exist("student",name,surname);
-//    if (!state){
-//        QVariantList list ;
-//        list << QVariant()<< name <<surname << pass<<age<<std_class<<grade;
-//    }
-//    else {
-//        qDebug()<<"name and surname "<< name << surname<< "already exist";
-
-//    }
+    }
 
 
 }

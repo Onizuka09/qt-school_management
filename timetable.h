@@ -14,7 +14,7 @@ class TimeTable : public QDialog
 public:
     explicit TimeTable(QWidget *parent = nullptr);
     ~TimeTable();
-    void show_time_table();
+    void show_time_table(int level);
 
 private:
     Ui::TimeTable *ui;

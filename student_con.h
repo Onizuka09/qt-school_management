@@ -30,7 +30,6 @@ private slots:
 
     void on_logout_btn_clicked();
 
-    void create_new_user_btn();// create new user btn
 
     void on_time_table_btn_clicked();
 
@@ -38,6 +37,11 @@ private slots:
 
     void on_teachers_btn_clicked();
 
+    void on_create_new_user_btn_clicked();
+
+
+    void on_delete_account_clicked();
+    void get_best_grades();
 private:
     Ui::student *ui;
     SQL_con *mysql_db;

@@ -29,7 +29,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    student *std ;
+    student* std ;
+//    Teacher_module* teacher;
 public :
     SQL_con mysql_db;
 

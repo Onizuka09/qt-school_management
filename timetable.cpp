@@ -6,7 +6,7 @@ TimeTable::TimeTable(QWidget *parent) :
     ui(new Ui::TimeTable)
 {
     ui->setupUi(this);
-    this->show_time_table();
+
 }
 
 TimeTable::~TimeTable()
@@ -14,11 +14,17 @@ TimeTable::~TimeTable()
     delete ui;
 }
 
-void TimeTable::show_time_table()
+void TimeTable::show_time_table(int level)
 {
-    QStringList daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-
-    QStringList subjects = {"Advanced Math", "Economics", "Literature", "Computer Science"};
+    ui->label->setText(QString ("Time table Level: %1").arg(level));
+    QStringList daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+    QStringList subjects ;
+    if (level==3)
+    subjects = {"Advanced Math", "Economics", "Literature", "Computer Science"};
+    else if (level == 2)
+    subjects = {"French", "Arabic", "english", "japenese"};
+    else if (level == 1)
+    subjects = {"MATH", "arabic", "french", "physics"};
     ui->tableWidget->setRowCount(daysOfWeek.size());
     ui->tableWidget->setVerticalHeaderLabels(daysOfWeek);
     ui->tableWidget->setColumnCount(subjects.size());
@@ -26,11 +32,10 @@ void TimeTable::show_time_table()
 
     QSqlQuery query;
 
-    if (query.exec("SELECT subject, days, duration FROM subjects_table WHERE level = 3")) // Adjust the query as needed
+    if (query.exec(QString("SELECT subject, days, duration FROM subjects_table WHERE level = '%1'").arg(level))) // Adjust the query as needed
     {
-        // Populate the timetable grid based on the SQL query results
-        while (query.next()) {
-            qDebug()<<"aaaaa";
+            while (query.next()) {
+
             QString subjectName = query.value(0).toString();
             QString days = query.value(1).toString();
             int duration = query.value(2).toInt();
