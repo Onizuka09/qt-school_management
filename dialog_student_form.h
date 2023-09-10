@@ -1,5 +1,5 @@
-#ifndef STD_INFO_H
-#define STD_INFO_H
+#ifndef DIALOG_STUDENT_FORM_H
+#define DIALOG_STUDENT_FORM_H
 
 #include <QDialog>
 #include <Sql_con.h>
@@ -22,7 +22,6 @@ private slots:
     void on_save_diag_btn_clicked();
 
 
-    void on_passwd_edit_editingFinished();
 
 private:
     bool create_new_user();
@@ -37,4 +36,4 @@ private:
 //    QString surname ="";
 };
 
-#endif // STD_INFO_H
+#endif // DIALOG_STUDENT_FORM_H

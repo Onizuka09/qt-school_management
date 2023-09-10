@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>603</height>
+    <height>860</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -388,7 +388,13 @@
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>400</height>
+              <height>300</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>300</height>
              </size>
             </property>
             <property name="frameShape">
@@ -418,7 +424,13 @@
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>400</height>
+                 <height>300</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>300</height>
                 </size>
                </property>
                <property name="frameShape">
@@ -435,13 +447,25 @@
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>634</width>
-                  <height>398</height>
+                  <width>620</width>
+                  <height>318</height>
                  </rect>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_7">
                  <item>
                   <widget class="QFrame" name="chart_frame">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>300</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>300</height>
+                    </size>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::NoFrame</enum>
                    </property>

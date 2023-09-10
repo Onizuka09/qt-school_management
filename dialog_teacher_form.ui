@@ -1,76 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>std_info</class>
- <widget class="QDialog" name="std_info">
+ <class>Dialog_teacher_form</class>
+ <widget class="QDialog" name="Dialog_teacher_form">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>434</width>
-    <height>367</height>
+    <width>427</width>
+    <height>290</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QFrame" name="frame">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>310</y>
-     <width>311</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QPushButton" name="close_diag_btn">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>10</y>
-      <width>80</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>CLOSE</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="save_diag_btn">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>10</y>
-      <width>111</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>60</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="text">
-     <string>SAVE</string>
-    </property>
-   </widget>
-  </widget>
   <widget class="QLabel" name="diag_title">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>160</x>
      <y>10</y>
      <width>121</width>
      <height>41</height>
@@ -83,10 +29,10 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>80</y>
+     <x>20</x>
+     <y>70</y>
      <width>181</width>
-     <height>171</height>
+     <height>121</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -147,13 +93,13 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>80</y>
+     <y>70</y>
      <width>181</width>
-     <height>171</height>
+     <height>101</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout_2">
@@ -166,51 +112,25 @@
     <property name="bottomMargin">
      <number>5</number>
     </property>
-    <item row="0" column="0">
+    <item row="1" column="1">
+     <widget class="QComboBox" name="subjects_combobox"/>
+    </item>
+    <item row="1" column="0">
      <widget class="QLabel" name="label_3">
       <property name="text">
-       <string>age</string>
+       <string>Subject</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Levels</string>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLineEdit" name="age_edit">
-      <property name="inputMethodHints">
-       <set>Qt::ImhNone</set>
-      </property>
-      <property name="inputMask">
-       <string/>
-      </property>
-      <property name="maxLength">
-       <number>28</number>
-      </property>
-      <property name="frame">
-       <bool>true</bool>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_5">
-      <property name="text">
-       <string>grade</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="grade_edit"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_6">
-      <property name="text">
-       <string>class</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QSpinBox" name="class_edit">
+     <widget class="QSpinBox" name="level_edit">
       <property name="minimum">
        <number>1</number>
       </property>
@@ -220,6 +140,60 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>230</y>
+     <width>311</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="close_diag_btn">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>80</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>CLOSE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="save_diag_btn">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>10</y>
+      <width>111</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>60</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>SAVE</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

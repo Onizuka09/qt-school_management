@@ -34,7 +34,7 @@ bool Dialog_std_teacher_info::show_my_teachers(int level)
 {
 
     ui->label->setText("My teachers -- Level: "+QString::number(level));
-         md = my_db->load_all_table_data("",QString("SELECT name,lastname,subject FROM teacher WHERE FIND_IN_SET('%1', levels) > 0").arg(level));
+         md = my_db->load_all_table_data("",QString("SELECT name,surname,subject FROM teacher WHERE FIND_IN_SET('%1', levels) > 0").arg(level));
         if (md != nullptr)
         {
              proxyModel = new QSortFilterProxyModel(this);

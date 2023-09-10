@@ -7,8 +7,8 @@ Dialog_myClassmates::Dialog_myClassmates(QWidget *parent,SQL_con* db) :
 {
     ui->setupUi(this);
 //    bool sata =show_my_classmates();
-    QStringList list = {"name","surname","age","grade"} ;
-    ui->filter->addItems(list);
+//    QStringList list = {"name","surname","age","grade"} ;
+    ui->filter->addItems({"name","surname","age","grade"});
 }
 
 Dialog_myClassmates::~Dialog_myClassmates()
@@ -36,6 +36,7 @@ void Dialog_myClassmates::applyFilter()
 
 bool Dialog_myClassmates::show_my_classmates(int level)
 {
+
     ui->label->setText("My classmates Level: "+QString::number(level));
      md = my_db->load_all_table_data("",QString("select name,surname,age,grade from student where class='%1'").arg(level));
     if (md != nullptr)

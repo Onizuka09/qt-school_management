@@ -1,7 +1,7 @@
 #include "student_con.h"
 #include "ui_student_con.h"
 
-#include <std_info.h>
+#include <dialog_student_form.h>
 //#include<QtCharts>
 
 #include<QChartView>
@@ -22,9 +22,9 @@ student::student(QWidget *parent, SQL_con *db) :
 student::~student()
 {
     delete ui;
-delete mysql_db;
+//delete mysql_db;
 
- delete proxyModel;
+delete proxyModel;
 
 }
 
@@ -59,34 +59,21 @@ void student::on_connect_clicked()
 }
 }
 
-//void student::on_pushButton_clicked()
-//{    if (mysql_db && mysql_db->isConnected())
-//{
-//    mysql_db->md = mysql_db->load_data();
-//    proxyModel = new QSortFilterProxyModel(this);
-////    *ui->tableView->setModel(mysql_db->md);
-//    proxyModel->setSourceModel(mysql_db->md);  // Set your MySQL data model as the source
-//    //*proxyModel->setSortColumn(2, Qt::AscendingOrder);  // Replace columnIndex with the desired column index
-//    //*proxyModel->setS
-//    ui->tableView->setSortingEnabled(true);
-//    ui->tableView->setModel(proxyModel);
-//    qDebug()<<mysql_db->md->rowCount();
 
-//}
 
 
 //}
 
 void student::on_logout_btn_clicked()
 {
-if (mysql_db->md)
-{
-    mysql_db->md->removeRows(0, mysql_db->md->rowCount());
-    delete mysql_db->md;
-    mysql_db->md = nullptr;
-    delete proxyModel;
-    proxyModel =nullptr;
-}
+//if (mysql_db->md)
+//{
+//    mysql_db->md->removeRows(0, mysql_db->md->rowCount());
+//    delete mysql_db->md;
+//    mysql_db->md = nullptr;
+//    delete proxyModel;
+//    proxyModel =nullptr;
+//}
 
 //ui->tableView->reset();
 ui->main_std_wid->close();
@@ -174,7 +161,7 @@ void student::on_create_new_user_btn_clicked()
 void student::on_delete_account_clicked()
 {
  QList<QString> list ;
- list << name << surname;
+// list << name << surname;
  bool a = mysql_db->remove_user("student",list);
  qDebug()   << a ;
  ui->stackedWidget->setCurrentWidget(ui->connect_wid);

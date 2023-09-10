@@ -17,7 +17,7 @@ private:
     QSqlDatabase db ;
     bool is_connected = false;
 public:
-    QSqlQueryModel* md = nullptr;
+//    QSqlQueryModel* md = nullptr;
     SQL_con(QString db_type , QString hostname,QString username , QString passwd,QString db_name );
     ~SQL_con();
     bool   connect ();

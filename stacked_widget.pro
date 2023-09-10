@@ -12,12 +12,14 @@ SOURCES += \
     Sql_con.cpp \
     dialog_myclassmates.cpp \
     dialog_std_teacher_info.cpp \
+    dialog_student_form.cpp \
+    dialog_teacher_form.cpp \
     grades_chart.cpp \
     main.cpp \
     mainwindow.cpp \
     notification.cpp \
-    std_info.cpp \
     student_con.cpp \
+    teacher_module.cpp \
     timetable.cpp
 
 HEADERS += \
@@ -25,19 +27,23 @@ HEADERS += \
     database_info.h \
     dialog_myclassmates.h \
     dialog_std_teacher_info.h \
+    dialog_student_form.h \
+    dialog_teacher_form.h \
     grades_chart.h \
     mainwindow.h \
     notification.h \
-    std_info.h \
     student_con.h \
+    teacher_module.h \
     timetable.h
 
 FORMS += \
     dialog_myclassmates.ui \
     dialog_std_teacher_info.ui \
+    dialog_student_form.ui \
+    dialog_teacher_form.ui \
     mainwindow.ui \
-    std_info.ui \
     student_con.ui \
+    teacher_module.ui \
     timetable.ui
 
 # Default rules for deployment.

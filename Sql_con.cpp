@@ -54,9 +54,16 @@ bool SQL_con::isConnected() const
 
 bool SQL_con::check_user_exist(QString table_name, QString name, QString surname)
 {
-    QSqlQuery qry;
-
-    QString cmd = QString("select * from %1 WHERE name =:name AND surname=:surname").arg(table_name);
+    QString cmd;
+    if ("student"==table_name)
+        cmd= QString("select * from %1 WHERE name =:name AND surname=:surname").arg(table_name);
+    else if ("teacher"== table_name)
+        cmd= QString("select * from %1 WHERE name =:name AND surname=:surname").arg(table_name);
+    else{
+        qDebug()<<"wrong table name";
+        return false ;
+    }
+     QSqlQuery qry;
     //    str
     qry.prepare(cmd);
     qry.bindValue(":name",name);
@@ -87,11 +94,19 @@ bool SQL_con::check_user_exist(QString table_name, QString name, QString surname
 
 bool SQL_con::update_user(QString table_name, QVariantList &items)
 {
-    if (items.size()!= 6){
-    qDebug()<<"size don't match: "<<items.size();
-    return false ;
+//    if (items.size()!= 6){
+//    qDebug()<<"size don't match: "<<items.size();
+//    return false ;
+//    }
+    QString cmd ;
+    if ("student"==table_name)
+    cmd = QString("UPDATE %1 SET password = ?, age = ?, class = ?, grade = ? where name = ? and surname =?" ).arg(table_name);
+    else if ("teacher"== table_name)
+    cmd = QString("UPDATE %1 SET password = ?, subject = ?, levels = ? where name = ? and surname =?" ).arg(table_name);
+    else{
+           qDebug()<<"wrong table name";
+        return false ;
     }
-    QString cmd = QString("UPDATE %1 SET password = ?, age = ?, class = ?, grade = ? where name = ? and surname =?" ).arg(table_name);
     QSqlQuery qry;
 
     qry.prepare(cmd);
@@ -112,15 +127,24 @@ bool SQL_con::update_user(QString table_name, QVariantList &items)
 
 bool SQL_con::insert_user(QString table_name, QVariantList &items)
 {
-    if (items.size()!= 7){
-    qDebug()<<"size don't match: "<<items.size();
+//    if (items.size()!= 7){
+//    qDebug()<<"size don't match: "<<items.size();
+//    return false ;
+//    }
+    QSqlQuery qry ;
+    QString cmd ;
+    if ("student"==table_name)
+    cmd = QString("INSERT INTO %1 (id, name, surname, password, age, class, grade) VALUES (?, ?, ?, ?, ?, ?, ?)").arg(table_name);
+    else if ("teacher"== table_name)
+    cmd = QString("INSERT INTO %1 (id_teacher, name, surname,password, subject, levels ) VALUES (?, ?, ?,?, ?, ?)").arg(table_name);
+    else{
+    qDebug()<<"wrong table name";
     return false ;
     }
-    QSqlQuery qry ;
-    QString cmd = QString("INSERT INTO %1 (id, name, surname, password, age, class, grade) VALUES (?, ?, ?, ?, ?, ?, ?)").arg(table_name);
     qry.prepare(cmd);
     for (int i=0; i<items.size();++i){
     qry.addBindValue(items.at(i));
+//    qDebug()<<items.at(i);
     }
     if (qry.exec())
     {

@@ -4,6 +4,9 @@
 #include "Sql_con.h"
 #include <QMainWindow>
 #include<QStackedWidget>
+#include<teacher_module.h>
+#include"grades_chart.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -17,6 +20,7 @@ public:
     ~MainWindow();
 
 private slots:
+//void set_chart();
     void on_home_btn_clicked();
     void on_student_btn_clicked();
     void on_teacher_btn_clicked();
@@ -30,9 +34,13 @@ private slots:
 private:
     Ui::MainWindow *ui;
     student* std ;
+    Teacher_module* teacher;
 //    Teacher_module* teacher;
 public :
     SQL_con mysql_db;
+    QChartView* chartView;
+    Grades_chart chart;
+
 
 };
 #endif // MAINWINDOW_H

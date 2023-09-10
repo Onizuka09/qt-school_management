@@ -1,5 +1,6 @@
-#include "std_info.h"
-#include "ui_std_info.h"
+#include "dialog_student_form.h"
+//#include "ui_std_info.h"
+#include "ui_dialog_student_form.h"
 #include<QList>
 std_info::std_info(QWidget *parent,QString type,SQL_con* db) :
     QDialog(parent),
@@ -9,7 +10,7 @@ std_info::std_info(QWidget *parent,QString type,SQL_con* db) :
 //    ui->save_diag_btn->setEnabled(true);
 
     ui->setupUi(this);
-    ui->save_diag_btn->setEnabled(true);
+//    ui->save_diag_btn->setEnabled(true);
 
     if (type=="Create"){
 
@@ -19,8 +20,8 @@ std_info::std_info(QWidget *parent,QString type,SQL_con* db) :
     else if ("Alter"==type){
         ui->diag_title->setText("My Information");
         ui->save_diag_btn->setText("Save changes");
-        ui->name_edit->setDisabled(false);
-        ui->surname_edit->setDisabled(false);
+        ui->name_edit->setDisabled(true);
+        ui->surname_edit->setDisabled(true);
     }
 }
 
@@ -127,9 +128,6 @@ void std_info::on_save_diag_btn_clicked()
 }
 
 
-void std_info::on_passwd_edit_editingFinished()
-{    qDebug()<< "testt !!";
-    ui->save_diag_btn->setEnabled(true);
-}
+
 
 

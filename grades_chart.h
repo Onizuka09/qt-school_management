@@ -9,8 +9,9 @@ class Grades_chart : public QObject
     Q_OBJECT
 public:
     explicit Grades_chart(QObject *parent = nullptr,SQL_con* db=nullptr);
-   QChartView* Create_chart();
+   QChartView* Create_chart(QList<QStringList >items );
     QList<QStringList > fetch_values();
+   void update_values();
 signals:
 
    private:

@@ -1,15 +1,16 @@
 #include "grades_chart.h"
+#include <QTimer>
+//#include<Q
 Grades_chart::Grades_chart(QObject *parent,SQL_con* db)
     : QObject(parent),mysql_db(db)
 {
 
 }
 
-QChartView *Grades_chart::Create_chart()
+QChartView *Grades_chart::Create_chart(QList<QStringList >items )
 
 
 {
-    QList<QStringList >items =fetch_values();
     QBarSet *set0 = new QBarSet("Level: 1");
     QBarSet *set1 = new QBarSet("Level: 2");
     QBarSet *set2 = new QBarSet("Level: 3");
@@ -73,4 +74,10 @@ QList<QStringList> Grades_chart::fetch_values()
     big_list.append(grades_list);
     qDebug()<< big_list;
     return big_list;
+}
+
+void Grades_chart::update_values()
+{
+
+
 }
