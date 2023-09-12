@@ -18,6 +18,7 @@ public:
 
 private:
     Ui::TimeTable *ui;
+
 };
 
 #endif // TIMETABLE_H

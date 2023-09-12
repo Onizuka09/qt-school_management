@@ -24,13 +24,46 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     teacher = new Teacher_module(this,&mysql_db);
     ui->stackedWidget->addWidget(teacher);
 //    set_chart();
+
+
     QList<QStringList >items =chart.fetch_values();
+
     chartView = chart.Create_chart(items );
+//    chartView->setUpdatesEnabled(true);
     ui->chart_frame_lay->addWidget(chartView );
 
 
     ui->scorll_frame->hide();
+update_value();
 }
+
+
+void MainWindow::update_value()
+{
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(timer_slot()));
+    timer->start(5000);
+
+}
+
+void MainWindow::timer_slot()
+{   a +=1;
+//    ui->chart_frame_lay->removeWidget(chartView);
+    qDebug() << "chart updated: "<<a;
+
+//    chartView = nullptr;
+    QList<QStringList >items =chart.fetch_values();
+    chart.update_values(items);
+    chartView->update();
+//    chart.series->update();
+//    chart.series->u
+//    ui->chart_frame_lay->&;
+}
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
 void MainWindow::on_student_btn_clicked(){
 
     ui->stackedWidget->setCurrentWidget(std);
@@ -38,13 +71,6 @@ void MainWindow::on_student_btn_clicked(){
     ui->scorll_frame->show();
 
 }
-
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-
-
 
 
 void MainWindow::on_home_btn_clicked()
@@ -84,4 +110,5 @@ void MainWindow::on_resizebtn_clicked()
 {
     this->showFullScreen();
 }
+
 

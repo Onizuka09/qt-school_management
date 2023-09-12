@@ -19,6 +19,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void update_value();
 private slots:
 //void set_chart();
     void on_home_btn_clicked();
@@ -30,7 +31,8 @@ private slots:
     void on_minimize_btn_clicked();
 
     void on_resizebtn_clicked();
-
+public slots:
+    void timer_slot();
 private:
     Ui::MainWindow *ui;
     student* std ;
@@ -38,8 +40,10 @@ private:
 //    Teacher_module* teacher;
 public :
     SQL_con mysql_db;
-    QChartView* chartView;
+    QChartView* chartView ;//= nullptr;
     Grades_chart chart;
+    int a=0;
+    QTimer* timer;
 
 
 };

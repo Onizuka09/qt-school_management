@@ -168,8 +168,8 @@ QStringList SQL_con::select_user(QString cmd)
             items.append(qry.value(i).toString());
             //            qDebug() << qry.value(i).toString();
         }
-        qDebug()<<items;
-        qDebug()<<"-------------------------------------";
+//        qDebug()<<items;
+//        qDebug()<<"-------------------------------------";
         //items.clear();
     }
     }
