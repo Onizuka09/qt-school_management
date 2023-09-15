@@ -4,7 +4,7 @@ This is a school management project that provides student and teachers with diff
 
 The project is programmed using the QT framework.   
 
-![App Screenshot](app_pictures/studentModuleGIF.gif)
+![App Screenshot](app_pictures/Home_screen.png)
 
 ## Features
 - Student Module
