@@ -6,7 +6,8 @@
 - Teacher Module  
 - Installation
 - ToDO
-##Overview:
+
+## Overview:
 This is a school management project that provides student and teachers with diffrent functionalities that manages student and teachers profiles.
 
 the Project was built using the Qt framework, featuring a database for storing and managing teacher and student data. The project consists of three main modules:
@@ -14,7 +15,7 @@ the Project was built using the Qt framework, featuring a database for storing a
 - Teacher Module
 - Realtime Chart Update 
 
-##Technologies Used: 
+## Technologies Used: 
 -qt 6.3.2  (c++) 
 -Qt Creator 
 -Mysql and phpMyadmin (for database configuration )   
@@ -24,7 +25,7 @@ the Project was built using the Qt framework, featuring a database for storing a
 - Teacher Module
 - Real time Chart update 
 
-# Student Module:
+## Student Module:
 In this Module, a student can: 
 - Login and logout 
 - Create a new account, delete account
@@ -33,7 +34,8 @@ In this Module, a student can:
 - view classmates
 - view teachers 
 ![App Screenshot](app_pictures/studentModuleGIF.gif)
-# Teacher Module 
+
+## Teacher Module 
 In this Module, a teacher can: 
 - Login and logout 
 - Create a new account, delete account 
