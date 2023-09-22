@@ -1,5 +1,5 @@
-#include "dialog_myclassmates.h"
-#include "ui_dialog_myclassmates.h"
+#include "Headers/dialog_myclassmates.h"
+#include "build/ui_headers/ui_dialog_myclassmates.h"
 
 Dialog_myClassmates::Dialog_myClassmates(QWidget *parent,SQL_con* db) :
     QDialog(parent),

@@ -3,8 +3,8 @@
 
 #include <QWidget>
 #include <QDebug>
-#include"Sql_con.h"
-#include"timetable.h"
+#include"Headers/Sql_con.h"
+#include"Headers/timetable.h"
 namespace Ui {
 class student;
 }

@@ -1,5 +1,5 @@
-#include "Sql_con.h"
-#include"notification.h"
+#include "Headers/Sql_con.h"
+#include"Headers/notification.h"
 
 
 SQL_con::SQL_con  (QString db_type , QString hostname,QString username , QString passwd,QString db_name )

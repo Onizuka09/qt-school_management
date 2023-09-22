@@ -2,7 +2,7 @@
 #define DIALOG_STD_TEACHER_INFO_H
 
 #include <QDialog>
-#include"Sql_con.h"
+#include"Headers/Sql_con.h"
 namespace Ui {
 class Dialog_std_teacher_info;
 }

@@ -1,4 +1,6 @@
-#include "timetable.h"
+#include "Headers/timetable.h"
+
+
 #include "ui_timetable.h"
 
 TimeTable::TimeTable(QWidget *parent) :

@@ -1,4 +1,4 @@
-#include "grades_chart.h"
+#include "Headers/grades_chart.h"
 #include <QTimer>
 //#include<Q
 Grades_chart::Grades_chart(QObject *parent,SQL_con* db)

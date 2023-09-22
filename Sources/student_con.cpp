@@ -1,15 +1,15 @@
-#include "student_con.h"
-#include "ui_student_con.h"
+#include "Headers/student_con.h"
+#include "build/ui_headers/ui_student_con.h"
 
-#include <dialog_student_form.h>
+#include "Headers/dialog_student_form.h"
 //#include<QtCharts>
 
 #include<QChartView>
 #include<QBarSet>
 #include<QBarSeries>
 #include<QtCharts>
-#include"dialog_myclassmates.h"
-#include"dialog_std_teacher_info.h"
+#include"Headers/dialog_myclassmates.h"
+#include"Headers/dialog_std_teacher_info.h"
 student::student(QWidget *parent, SQL_con *db) :
     QWidget(parent),
     ui(new Ui::student),mysql_db(db)

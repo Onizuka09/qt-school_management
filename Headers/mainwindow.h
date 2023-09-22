@@ -1,11 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "student_con.h"
-#include "Sql_con.h"
+#include "Headers/student_con.h"
+#include "Headers/Sql_con.h"
 #include <QMainWindow>
 #include<QStackedWidget>
-#include<teacher_module.h>
-#include"grades_chart.h"
+#include"Headers/teacher_module.h"
+#include"Headers/grades_chart.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

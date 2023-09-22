@@ -1,5 +1,5 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "Headers/mainwindow.h"
+#include "build/ui_headers/ui_mainwindow.h"
 #include <QTimer>
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
     , ui(new Ui::MainWindow),mysql_db ("QMYSQL" ,"localhost","moktar","0000", "qt5"),chart(nullptr,&mysql_db)

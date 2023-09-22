@@ -2,7 +2,7 @@
 #define DIALOG_TEACHER_FORM_H
 
 #include <QDialog>
-#include"Sql_con.h"
+#include"Headers/Sql_con.h"
 namespace Ui {
 class Dialog_teacher_form;
 }

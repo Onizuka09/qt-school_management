@@ -1,5 +1,5 @@
-#include "dialog_std_teacher_info.h"
-#include "ui_dialog_std_teacher_info.h"
+#include "Headers/dialog_std_teacher_info.h"
+#include "build/ui_headers/ui_dialog_std_teacher_info.h"
 
 Dialog_std_teacher_info::Dialog_std_teacher_info(QWidget *parent,SQL_con* db) :
     QDialog(parent),

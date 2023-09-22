@@ -1,5 +1,5 @@
-#include "dialog_teacher_form.h"
-#include "ui_dialog_teacher_form.h"
+#include "Headers/dialog_teacher_form.h"
+#include "build/ui_headers/ui_dialog_teacher_form.h"
 #include <QCoreApplication>
 
 Dialog_teacher_form::Dialog_teacher_form(QWidget *parent, QString type, SQL_con* db) :

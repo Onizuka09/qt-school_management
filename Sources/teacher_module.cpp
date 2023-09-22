@@ -1,7 +1,7 @@
-#include "teacher_module.h"
-#include "ui_teacher_module.h"
+#include "Headers/teacher_module.h"
+#include "build/ui_headers/ui_teacher_module.h"
 #include<QDebug>
-#include "dialog_teacher_form.h"
+#include "Headers/dialog_teacher_form.h"
 Teacher_module::Teacher_module(QWidget *parent, SQL_con* db) :
     QWidget(parent),
     ui(new Ui::Teacher_module),mysql_db(db)

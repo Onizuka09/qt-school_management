@@ -2,7 +2,7 @@
 #define TIMETABLE_H
 
 #include <QDialog>
-#include<Sql_con.h>
+#include"Headers/Sql_con.h"
 namespace Ui {
 class TimeTable;
 }

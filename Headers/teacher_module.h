@@ -2,7 +2,7 @@
 #define TEACHER_MODULE_H
 
 #include <QWidget>
-#include"Sql_con.h"
+#include"Headers/Sql_con.h"
 namespace Ui {
 class Teacher_module;
 }

@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include<QtCharts>
-#include"Sql_con.h"
+#include"Headers/Sql_con.h"
 class Grades_chart : public QObject
 {
     Q_OBJECT

@@ -1,6 +1,6 @@
 #ifndef SQL_CON_H
 #define SQL_CON_H
-#include<database_info.h>
+#include<Headers/database_info.h>
 #include<QtSql>
 #include<QDebug>
 #include<QVariant>

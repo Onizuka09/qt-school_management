@@ -1,6 +1,6 @@
-#include "dialog_student_form.h"
+#include "Headers/dialog_student_form.h"
 //#include "ui_std_info.h"
-#include "ui_dialog_student_form.h"
+#include "build/ui_headers/ui_dialog_student_form.h"
 #include<QList>
 std_info::std_info(QWidget *parent,QString type,SQL_con* db) :
     QDialog(parent),

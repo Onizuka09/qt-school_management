@@ -2,7 +2,7 @@
 #define DIALOG_MYCLASSMATES_H
 
 #include <QDialog>
-#include<Sql_con.h>
+#include"Headers/Sql_con.h"
 #include <QSortFilterProxyModel>
 #include <QTableView>
 namespace Ui {
