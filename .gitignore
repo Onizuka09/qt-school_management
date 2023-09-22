@@ -1,4 +1,5 @@
 build
 Makefile
 qt-school_management
+.qmake.stash
 
